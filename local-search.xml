@@ -8,9 +8,21 @@
     <link href="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/"/>
     <url>/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>自己花了几天时间，用mysql + html + css + js + springboot搭建了一个点单商城的全栈项目，项目地址：<a href="https://github.com/yuchenlichuck/dian-dian-shop">点单商城</a>。</p>]]></content>
     
     
+    <categories>
+      
+      <category>-front-end</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>-原创</tag>
+      
+    </tags>
     
   </entry>
   
