@@ -8,7 +8,7 @@
     <link href="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/"/>
     <url>/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/</url>
     
-    <content type="html"><![CDATA[<p>自己花了几天时间，用mysql + html + css + js + springboot搭建了一个点单商城的全栈项目，项目地址：<a href="https://github.com/yuchenlichuck/dian-dian-shop">点单商城</a>。</p>]]></content>
+    <content type="html"><![CDATA[<p>hhhh<br>自己花了几天时间，用 mysql + html + css + js + springboot 搭建了一个点单商城的全栈项目，项目地址：<a href="https://github.com/yuchenlichuck/dian-dian-shop">点单商城</a>。</p><p>这里的技术栈主要是：</p><ul><li>mysql：数据库</li><li>html：前端页面</li><li>css：页面美化</li><li>js：页面交互</li><li>springboot：后端框架</li></ul><p>项目的功能主要是：</p><ul><li>用户注册、登录、注销</li><li>商品列表、商品详情</li><li>购物车、订单</li><li>后台管理<br>（支付暂且没有）</li></ul><p>项目的架构主要分为：</p><ul><li>前台：html + css + js</li><li>后台：springboot + mysql</li></ul><p>项目的部署主要分为：<br>略</p><p>项目的开发环境：</p><ul><li>IDE：IntelliJ IDEA</li><li>数据库：mysql 8.0</li><li>后端：jdk 1.8 + springboot 2.3.1</li><li>前端：html + css + js</li></ul><p>项目的运行截图：<br>略</p><p>具体流程：<br>   用户访问主页面，也就是点单的界面，aop会检测是否携带着token（这里的token也携带着加密的用户信息，包括username，password，permission），如果没有携带，则会跳转到登录页面，如果携带了，就会判断用户的permission，user 和 admin 都有权限，可以访问后台管理页面，如果是普通用户，则只能访问商品列表页面。</p><p>这里的讲解会分前后端来讲解，保证看完这个简单的例子，实现新手的从 0 到 1 的开发体验。</p>]]></content>
     
     
     <categories>
@@ -21,44 +21,6 @@
     <tags>
       
       <tag>-原创</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2024/12/19/hello-world/"/>
-    <url>/2024/12/19/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>测试文章</title>
-    <link href="/2021/06/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <url>/2021/06/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    
-    <content type="html"><![CDATA[<p>这是一篇测试文章</p><p><img src="/2021/06/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/me.png" alt="图片引用方法二"></p><!-- hexo new post 测试文章 -->]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>原创</tag>
       
     </tags>
     
