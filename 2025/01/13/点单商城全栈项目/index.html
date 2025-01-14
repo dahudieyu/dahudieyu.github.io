@@ -27,8 +27,14 @@
 <meta property="og:description" content="自己花了几天时间，用 mysql + html + css + js + springboot 搭建了一个点单商城的全栈项目，项目地址：点单商城。 技术栈：  mysql：数据库 html：前端页面 css：页面美化 js：页面交互 springboot：后端框架  项目的功能主要是：  用户注册、登录、注销 商品列表、商品详情 购物车、订单 后台管理（支付暂且没有）  项目的架构主要分为：  前">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code1.png">
+<meta property="og:image" content="http://example.com/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code2.png">
+<meta property="og:image" content="http://example.com/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code3.png">
+<meta property="og:image" content="http://example.com/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code4.png">
+<meta property="og:image" content="http://example.com/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code5.png">
+<meta property="og:image" content="http://example.com/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code5.png">
+<meta property="og:image" content="http://example.com/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code7.png">
 <meta property="article:published_time" content="2025-01-13T14:42:15.000Z">
-<meta property="article:modified_time" content="2025-01-14T09:16:05.290Z">
+<meta property="article:modified_time" content="2025-01-14T09:59:21.874Z">
 <meta property="article:author" content="dukanghui">
 <meta property="article:tag" content="原创">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          452 字
+          792 字
         
       </span>
     
@@ -249,7 +255,7 @@
         
         
         
-          4 分钟
+          7 分钟
         
       </span>
     
@@ -332,9 +338,22 @@
 <p><strong>项目的运行截图：</strong><br>略</p>
 <p><strong>具体流程：</strong><br>   用户访问主页面，也就是点单的界面，aop会检测是否携带着token（这里的token也携带着加密的用户信息，包括username，password，permission），如果没有携带，则会跳转到登录页面，如果携带了，就会判断用户的permission，user 和 admin 都有权限，可以访问后台管理页面，如果是普通用户，则只能访问商品列表页面。</p>
 <p>这里的讲解会分前后端来讲解，保证看完这个简单的例子，实现新手的从 0 到 1 的开发体验。</p>
-<ul>
-<li>前端：<br> 前端是使用html+css+js来实现的，主要是实现了商品列表页面，商品详情页面，购物车页面，订单页面，登录页面，注册页面等。其实最主要的还是js的用法，这里的js是借用jQUery库来实现，而post和get的请求也是借助ajax来实现的。<br> 这里有一个小插曲，我为每一个访问的路径都写了一个get或者post请求，但是学长看了我写的代码，让我修改成统一的请求方式，如下图：<br> <img src="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code1.png" srcset="/img/loading.gif" lazyload alt="get-post函数封装"></li>
-</ul>
+<h1 id="前端："><a href="#前端：" class="headerlink" title="前端："></a>前端：</h1><p>   前端是使用html+css+js来实现的，主要是实现了商品列表页面，商品详情页面，购物车页面，订单页面，登录页面，注册页面等。其实最主要的还是js的用法，这里的js是借用jQUery库来实现，而post和get的请求也是借助ajax来实现的。<br>   这里有一个小插曲，我为每一个访问的路径都写了一个get或者post请求，但是学长看了我写的代码，让我修改成统一的请求方式，如下图：<br>   <img src="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code1.png" srcset="/img/loading.gif" lazyload alt="get-post函数封装"><br>    这是一个重要的思想，在学长的点拨之后，·我开始思考如何封装一个通用的请求函数，使得所有的请求都可以统一调用，而不是每个页面都写一遍请求代码。</p>
+<h1 id="后端："><a href="#后端：" class="headerlink" title="后端："></a>后端：</h1><p>   后端是使用springboot+mysql来实现的，主要是实现了用户注册、登录、注销，商品列表、商品详情，购物车、订单，后台管理等功能。</p>
+<h2 id="结构的设计："><a href="#结构的设计：" class="headerlink" title="结构的设计："></a>结构的设计：</h2><pre><code class="hljs">先创建几个软件包，aspect（使用aop切面来获取访问的requests），controller（负责处理请求），entity（实体类），service（业务逻辑），repository（数据访问），utils（工具类），config（配置文件，这个配置文件主要为拦截器做配置，因为这里的拦截器是使用aop来实现的，所以不需要在config中配置）。
+
+用户对网址的请求，先来到Controller，在被aspect拦截（utils里面的jwtutil定义了一些函数，包括生成jwttoken，验证jwttoken，从jwttoken中获取用户信息等），然后进入到Service层，Service层会调用mapper层，mapper层会访问数据库，然后返回结果给Service层，Service层再返回给Controller层，Controller层再返回给前端页面。
+</code></pre>
+<h3 id="典型代码讲解："><a href="#典型代码讲解：" class="headerlink" title="典型代码讲解："></a>典型代码讲解：</h3><ol>
+<li>Controller层：<br>如图：<br><img src="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code2.png" srcset="/img/loading.gif" lazyload alt="Controller层"></li>
+<li>aspect层（使用aop写的）：<br>如图：<br><img src="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code3.png" srcset="/img/loading.gif" lazyload alt="aspect层"></li>
+<li>Service层：<br>如图：<br><img src="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code4.png" srcset="/img/loading.gif" lazyload alt="Service层"></li>
+<li>mapper层：<br>如图：<br><img src="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code5.png" srcset="/img/loading.gif" lazyload alt="mapper层"></li>
+<li>entity层：<br>如图：<br><img src="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code5.png" srcset="/img/loading.gif" lazyload alt="entity层"></li>
+<li>utils层：<br>如图：<br><img src="/2025/01/13/%E7%82%B9%E5%8D%95%E5%95%86%E5%9F%8E%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE/code7.png" srcset="/img/loading.gif" lazyload alt="utils层.JwtUtil"></li>
+</ol>
+<pre><code class="hljs">![utils层.R](code8.png)
+</code></pre>
 
                 
               </div>
